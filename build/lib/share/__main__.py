@@ -4,16 +4,14 @@ from share.upload_single import upload_single
 from share.upload_multiple import upload_multiple
 
 
-parser = ArgumentParser(
-    description="Upload a file to a sharing service and print a URL to it",
-    usage="share FILE [-h] [--host HOST]"
-)
+def main(args=None):
+    parser = ArgumentParser(
+        description="Upload a file to a sharing service and print a URL to it",
+        usage="share FILE [-h] [--host HOST]"
+    )
 
-parser.add_argument("file", nargs="*", help="path to the file to upload")
-parser.add_argument("--host", help="explicitly specify the host to use")
-
-
-def main():
+    parser.add_argument("file", nargs="*", help="path to the file to upload")
+    parser.add_argument("--host", help="explicitly specify the host to use")
     args = parser.parse_args()
 
 
